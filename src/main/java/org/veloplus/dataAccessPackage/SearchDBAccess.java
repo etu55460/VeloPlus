@@ -32,7 +32,7 @@ public class SearchDBAccess implements SearchDataAccess {
                     so.order_date,
                     so.deposit_amount,
                     sol.quantity,
-                    sol.unit_price AS line_unit_price,
+                    ROUND(sol.quantity * sol.unit_price * (1 - COALESCE(sol.discount_percent, 0) / 100), 2) AS line_price,
                     sol.discount_percent,
                     b.model,
                     b.size_id,
@@ -57,7 +57,7 @@ public class SearchDBAccess implements SearchDataAccess {
                 orderLine.setOrderDate(resultSet.getDate("order_date").toLocalDate());
                 orderLine.setDepositAmount(resultSet.getBigDecimal("deposit_amount"));
                 orderLine.setQuantity(resultSet.getInt("quantity"));
-                orderLine.setLineUnitPrice(resultSet.getBigDecimal("line_unit_price"));
+                orderLine.setLinePrice(resultSet.getBigDecimal("line_price"));
                 orderLine.setDiscountPercent(resultSet.getBigDecimal("discount_percent"));
                 orderLine.setBikeModel(resultSet.getString("model"));
                 orderLine.setBikeSizeId(resultSet.getInt("size_id"));

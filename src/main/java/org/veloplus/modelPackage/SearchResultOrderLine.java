@@ -8,7 +8,7 @@ public class SearchResultOrderLine {
     private LocalDate orderDate;
     private BigDecimal depositAmount;
     private Integer quantity;
-    private BigDecimal lineUnitPrice;
+    private BigDecimal linePrice;
     private BigDecimal discountPercent;
     private String bikeModel;
     private Integer bikeSizeId;
@@ -41,12 +41,12 @@ public class SearchResultOrderLine {
         this.quantity = quantity;
     }
 
-    public BigDecimal getLineUnitPrice() {
-        return lineUnitPrice;
+    public BigDecimal getLinePrice() {
+        return linePrice;
     }
 
-    public void setLineUnitPrice(BigDecimal lineUnitPrice) {
-        this.lineUnitPrice = lineUnitPrice;
+    public void setLinePrice(BigDecimal linePrice) {
+        this.linePrice = linePrice;
     }
 
     public BigDecimal getDiscountPercent() {

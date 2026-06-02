@@ -41,7 +41,7 @@ public class SearchOrderLineTableModel extends AbstractTableModel {
             case 0 -> orderLine.getOrderDate();
             case 1 -> orderLine.getDepositAmount();
             case 2 -> orderLine.getQuantity();
-            case 3 -> orderLine.getLineUnitPrice();
+            case 3 -> orderLine.getLinePrice();
             case 4 -> orderLine.getDiscountPercent();
             case 5 -> orderLine.getBikeModel();
             case 6 -> orderLine.getBikeSizeId();
